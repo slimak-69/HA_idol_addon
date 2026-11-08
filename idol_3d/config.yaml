@@ -1,0 +1,25 @@
+name: "Speridlabs Idol 3D"
+version: "1.0.0"
+slug: "idol_3d"
+description: "Generator obiektów 3D Gaussian Splatting z jednego zdjęcia (Speridlabs Idol API + podgląd WebGL)"
+arch:
+  - amd64
+  - aarch64
+init: false
+startup: application
+boot: auto
+ingress: true
+ingress_port: 8099
+panel_icon: "mdi:cube-scan"
+panel_title: "Idol 3D"
+map:
+  - homeassistant_config:rw
+  - media:rw
+options:
+  hf_token: ""
+  default_mode: "real"
+  default_gaussians: 262144
+schema:
+  hf_token: password?
+  default_mode: list(real|synthetic)
+  default_gaussians: int(32768,1048576)
